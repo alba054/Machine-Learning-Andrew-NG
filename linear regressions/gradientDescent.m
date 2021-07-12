@@ -21,7 +21,7 @@ for iter = 1:num_iters
     theta = theta - (alpha * dj);  % vector n X 1 (vectorized form)
     disp(theta);
 
-
+   % SOLVED
 
 
     % ============================================================
