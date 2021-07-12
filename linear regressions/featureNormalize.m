@@ -7,8 +7,11 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 
 % You need to set these values correctly
 X_norm = X;
-mu = zeros(1, size(X, 2));
-sigma = zeros(1, size(X, 2));
+mu = mean(X);
+sigma = std(X);
+for i = 1:size(X_norm, 2),
+	X_norm(:, i) = X_norm(:, i) - mu(i);
+	X_norm(:, i) = X_norm(:, i) / sigma(i);
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: First, for each feature dimension, compute the mean
